@@ -22,10 +22,14 @@ for (let i = 0; i < acctBalances.length; i++) {
 console.log(sum);
 
 const sumEl = document.createElement('h3');
+const container = document.querySelector('.container');
 
-document.body.appendChild(sumEl);
+container.appendChild(sumEl);
 
 sumEl.innerHTML = 'Thinking <span class="fa fa-spinner fa-spin"></span>';
+sumEl.classList.add('subtitle');
+
 window.setTimeout(() => {
   sumEl.innerText = `The total in the bank is $${sum / 100}`;
-}, 5000);
+  sumEl.classList.toggle('title');
+}, 2000);
